@@ -9,6 +9,7 @@ int main(int argc, char *argv[])
     w.show();
     cout<<"hello"<<endl;
     cout<<"hello2"<<endl;
+    cout<<"hello3"<<endl;
     return a.exec();
 
 }
