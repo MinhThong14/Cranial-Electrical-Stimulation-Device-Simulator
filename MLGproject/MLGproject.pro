@@ -19,12 +19,17 @@ SOURCES += \
     battery.cpp \
     log.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    session.cpp \
+    treatmentdata.cpp
 
 HEADERS += \
     battery.h \
     log.h \
-    mainwindow.h
+    mainwindow.h \
+    session.h \
+    sessiontypes.h \
+    treatmentdata.h
 
 FORMS += \
     mainwindow.ui

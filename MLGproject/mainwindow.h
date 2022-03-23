@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <log.h>
+#include <treatmentdata.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
