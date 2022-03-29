@@ -1,0 +1,42 @@
+<RCC>
+    <qresource prefix="/">
+        <file>pngs/button.png</file>
+        <file>pngs/canada.png</file>
+        <file>pngs/downButton.png</file>
+        <file>pngs/mindAlive.png</file>
+        <file>pngs/oasisPro.png</file>
+        <file>pngs/onButton.png</file>
+        <file>pngs/onLight.png</file>
+        <file>pngs/topRight1.png</file>
+        <file>pngs/bar1.png</file>
+        <file>pngs/bar2.png</file>
+        <file>pngs/bar3.png</file>
+        <file>pngs/bar4.png</file>
+        <file>pngs/bar5.png</file>
+        <file>pngs/bar6.png</file>
+        <file>pngs/bar7.png</file>
+        <file>pngs/bar8.png</file>
+        <file>pngs/bottomLeft.png</file>
+        <file>pngs/checkButton.png</file>
+        <file>pngs/INT.png</file>
+        <file>pngs/Steps.txt</file>
+        <file>pngs/tDCS.png</file>
+        <file>pngs/topLeft.png</file>
+        <file>pngs/topMiddle3h.png</file>
+        <file>pngs/topMiddle100HZ.png</file>
+        <file>pngs/topMiddleA.png</file>
+        <file>pngs/topMiddleAlpha.png</file>
+        <file>pngs/topMiddleBeta1.png</file>
+        <file>pngs/topMiddleBeta2.png</file>
+        <file>pngs/topMiddleLess.png</file>
+        <file>pngs/topMiddleMET.png</file>
+        <file>pngs/topMiddleMore.png</file>
+        <file>pngs/topMiddleOmega.png</file>
+        <file>pngs/topMiddlePlus.png</file>
+        <file>pngs/topMiddleSA.png</file>
+        <file>pngs/topRight2.png</file>
+        <file>pngs/topRight3.png</file>
+        <file>pngs/topRight4.png</file>
+        <file>pngs/upButton.png</file>
+    </qresource>
+</RCC>
