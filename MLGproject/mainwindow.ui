@@ -13,10 +13,6 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-<<<<<<< HEAD
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
-=======
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="Background">
     <property name="geometry">
@@ -943,7 +939,6 @@ onButton:pressed{
     </rect>
    </property>
   </widget>
->>>>>>> 64352ac2f2e96d217616ea5d8765ebfac64adf6b
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>

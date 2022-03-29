@@ -17,10 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     battery.cpp \
-<<<<<<< HEAD
     device.cpp \
-=======
->>>>>>> 64352ac2f2e96d217616ea5d8765ebfac64adf6b
     log.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -29,10 +26,7 @@ SOURCES += \
 
 HEADERS += \
     battery.h \
-<<<<<<< HEAD
     device.h \
-=======
->>>>>>> 64352ac2f2e96d217616ea5d8765ebfac64adf6b
     log.h \
     mainwindow.h \
     session.h \
@@ -46,9 +40,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-<<<<<<< HEAD
-=======
 
 RESOURCES += \
     pics.qrc
->>>>>>> 64352ac2f2e96d217616ea5d8765ebfac64adf6b
