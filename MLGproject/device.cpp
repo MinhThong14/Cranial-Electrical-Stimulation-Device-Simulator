@@ -4,3 +4,13 @@ Device::Device()
 {
 
 }
+
+Device::~Device()
+{
+
+}
+
+void Device::update()
+{
+    battery.drain(1);
+}
