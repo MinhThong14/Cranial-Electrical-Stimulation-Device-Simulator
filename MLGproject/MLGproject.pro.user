@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< HEAD
 <!-- Written by QtCreator 4.11.0, 2022-03-28T22:26:28. -->
+=======
+<!-- Written by QtCreator 4.11.0, 2022-03-28T22:11:33. -->
+>>>>>>> 64352ac2f2e96d217616ea5d8765ebfac64adf6b
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -283,8 +287,13 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">MLGproject2</value>
+<<<<<<< HEAD
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/student/Desktop/SharedFolders/sf_3004_VM_Shared_Folder/Comp3004_Team_Project/MLGproject/MLGproject.pro</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/student/Desktop/SharedFolders/sf_3004_VM_Shared_Folder/Comp3004_Team_Project/MLGproject/MLGproject.pro</value>
+=======
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/student/Team_12/Comp3004_Team_Project/MLGproject/MLGproject.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/home/student/Team_12/Comp3004_Team_Project/MLGproject/MLGproject.pro</value>
+>>>>>>> 64352ac2f2e96d217616ea5d8765ebfac64adf6b
     <value type="QString" key="RunConfiguration.Arguments"></value>
     <value type="bool" key="RunConfiguration.Arguments.multi">false</value>
     <value type="QString" key="RunConfiguration.OverrideDebuggerStartup"></value>
