@@ -7,6 +7,7 @@ class Battery
 {
 public:
     Battery();
+    void update();
     void setLogging(bool doLog);
     int getPower();
     void setPower(int amount);

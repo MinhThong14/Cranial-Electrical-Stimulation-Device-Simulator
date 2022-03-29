@@ -1,0 +1,69 @@
+#ifndef DEVICE_H
+#define DEVICE_H
+
+#include <QObject>
+#include <QList>
+#include <QTimer>
+#include <QString>
+#include <QMessageBox>
+
+#include <log.h>
+#include <battery.h>
+#include <session.h>
+#include <sessiontypes.h>
+#include <treatmentdata.h>
+
+
+class Device : public QObject
+{
+    Q_OBJECT
+
+public:
+    Device(QObject *parent = NULL);
+    ~Device();
+    void update();
+
+    void chargeBattery();
+    void setBatteryCharge();
+    void powerSurge();
+
+    void powerButtonPressed();
+    void upButtonPressed();
+    void downButtonPressed();
+
+    void changeFrequency();
+    void changeWaveform();
+    void enableDevice(bool enable);
+    void chargeDeviceToFull();
+    void decreaseBattery();
+    void manuallyDecreaseBattery();
+    void displayBatteryText();
+    void decreaseTime();
+    void toggleSkinInContact(QString value);
+    void exceedDeviceCurrent();
+    void currentExceeded();
+    void timeButtonPressed();
+
+    void intensityPressed();
+    void historyPressed();
+    void recordButtonPressed();
+    void fastForwardPressed();
+
+private:
+    Battery battery;
+    QTimer timer;
+    QList<TreatmentData*> completedTreatments;
+    TreatmentData* curTreatment;
+    bool turnedOn;
+    bool treatmentInProgress;
+
+    void disableAllButtons();
+    void disableButton(QString);
+    void enableAllButtons();
+    void enableButton(QString);
+    void startTreatment(int);
+    void alert(QString);
+    void displayLowBattery();
+};
+
+#endif // DEVICE_H
