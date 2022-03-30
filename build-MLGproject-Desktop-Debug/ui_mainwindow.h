@@ -11,8 +11,12 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -62,6 +66,18 @@ public:
     QLabel *INT;
     QPushButton *checkButton;
     QLabel *bottomLeft;
+    QLCDNumber *lcdNumber;
+    QListWidget *historyWidget;
+    QCheckBox *historyCheckBox;
+    QPushButton *historyButton;
+    QFrame *Background_2;
+    QPushButton *chargeDeviceButton;
+    QLabel *background2Label;
+    QLabel *drainBatteryLabel;
+    QPushButton *drainBattery1;
+    QPushButton *pushButton;
+    QLabel *attachToSkinLabel;
+    QComboBox *contackSkinDropbox;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -69,18 +85,18 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(800, 600);
+        MainWindow->resize(1120, 600);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         Background = new QFrame(centralwidget);
         Background->setObjectName(QString::fromUtf8("Background"));
-        Background->setGeometry(QRect(0, 0, 800, 600));
+        Background->setGeometry(QRect(10, 0, 791, 600));
         Background->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);"));
         Background->setFrameShape(QFrame::StyledPanel);
         Background->setFrameShadow(QFrame::Raised);
         onButton = new QPushButton(Background);
         onButton->setObjectName(QString::fromUtf8("onButton"));
-        onButton->setGeometry(QRect(470, 475, 71, 68));
+        onButton->setGeometry(QRect(490, 470, 71, 68));
         onButton->setStyleSheet(QString::fromUtf8("#onButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/pngs/onButton.png);\n"
@@ -104,7 +120,7 @@ public:
 "}"));
         onLight = new QLabel(Background);
         onLight->setObjectName(QString::fromUtf8("onLight"));
-        onLight->setGeometry(QRect(488, 462, 35, 18));
+        onLight->setGeometry(QRect(510, 460, 35, 18));
         onLight->setStyleSheet(QString::fromUtf8("#onLight{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/pngs/onLight.png);\n"
@@ -139,7 +155,7 @@ public:
 "}"));
         downButton = new QPushButton(Background);
         downButton->setObjectName(QString::fromUtf8("downButton"));
-        downButton->setGeometry(QRect(380, 480, 61, 51));
+        downButton->setGeometry(QRect(400, 480, 61, 51));
         downButton->setStyleSheet(QString::fromUtf8("#downButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/pngs/downButton.png);\n"
@@ -152,7 +168,7 @@ public:
 "}"));
         oasisPro = new QLabel(Background);
         oasisPro->setObjectName(QString::fromUtf8("oasisPro"));
-        oasisPro->setGeometry(QRect(460, 170, 331, 201));
+        oasisPro->setGeometry(QRect(480, 200, 301, 181));
         oasisPro->setStyleSheet(QString::fromUtf8("#oasisPro\n"
 "{\n"
 "	background-color: transparent;\n"
@@ -372,7 +388,7 @@ public:
 "}"));
         tDCS = new QLabel(Background);
         tDCS->setObjectName(QString::fromUtf8("tDCS"));
-        tDCS->setGeometry(QRect(300, 240, 61, 21));
+        tDCS->setGeometry(QRect(270, 250, 61, 21));
         tDCS->setStyleSheet(QString::fromUtf8("#tDCS{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/pngs/tDCS.png);\n"
@@ -385,7 +401,7 @@ public:
 "}"));
         bar1 = new QLabel(Background);
         bar1->setObjectName(QString::fromUtf8("bar1"));
-        bar1->setGeometry(QRect(210, 500, 141, 21));
+        bar1->setGeometry(QRect(230, 500, 141, 21));
         bar1->setStyleSheet(QString::fromUtf8("#bar1{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/pngs/bar1.png);\n"
@@ -398,7 +414,7 @@ public:
 "}"));
         bar2 = new QLabel(Background);
         bar2->setObjectName(QString::fromUtf8("bar2"));
-        bar2->setGeometry(QRect(210, 470, 141, 21));
+        bar2->setGeometry(QRect(230, 470, 141, 21));
         bar2->setStyleSheet(QString::fromUtf8("#bar2{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/pngs/bar2.png);\n"
@@ -411,7 +427,7 @@ public:
 "}"));
         bar3 = new QLabel(Background);
         bar3->setObjectName(QString::fromUtf8("bar3"));
-        bar3->setGeometry(QRect(210, 440, 141, 21));
+        bar3->setGeometry(QRect(230, 440, 141, 21));
         bar3->setStyleSheet(QString::fromUtf8("#bar3{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/pngs/bar3.png);\n"
@@ -424,7 +440,7 @@ public:
 "}"));
         bar4 = new QLabel(Background);
         bar4->setObjectName(QString::fromUtf8("bar4"));
-        bar4->setGeometry(QRect(210, 410, 141, 21));
+        bar4->setGeometry(QRect(230, 410, 141, 21));
         bar4->setStyleSheet(QString::fromUtf8("#bar4{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/pngs/bar4.png);\n"
@@ -437,7 +453,7 @@ public:
 "}"));
         bar5 = new QLabel(Background);
         bar5->setObjectName(QString::fromUtf8("bar5"));
-        bar5->setGeometry(QRect(210, 380, 141, 21));
+        bar5->setGeometry(QRect(230, 380, 141, 21));
         bar5->setStyleSheet(QString::fromUtf8("#bar5{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/pngs/bar5.png);\n"
@@ -450,7 +466,7 @@ public:
 "}"));
         bar6 = new QLabel(Background);
         bar6->setObjectName(QString::fromUtf8("bar6"));
-        bar6->setGeometry(QRect(210, 350, 141, 21));
+        bar6->setGeometry(QRect(230, 350, 141, 21));
         bar6->setStyleSheet(QString::fromUtf8("#bar6{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/pngs/bar6.png);\n"
@@ -463,7 +479,7 @@ public:
 "}"));
         bar7 = new QLabel(Background);
         bar7->setObjectName(QString::fromUtf8("bar7"));
-        bar7->setGeometry(QRect(210, 320, 141, 21));
+        bar7->setGeometry(QRect(230, 320, 141, 21));
         bar7->setStyleSheet(QString::fromUtf8("#bar7{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/pngs/bar7.png);\n"
@@ -476,7 +492,7 @@ public:
 "}"));
         bar8 = new QLabel(Background);
         bar8->setObjectName(QString::fromUtf8("bar8"));
-        bar8->setGeometry(QRect(210, 290, 141, 21));
+        bar8->setGeometry(QRect(230, 290, 141, 21));
         bar8->setStyleSheet(QString::fromUtf8("#bar8{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/pngs/bar8.png);\n"
@@ -489,7 +505,7 @@ public:
 "}"));
         upButton = new QPushButton(Background);
         upButton->setObjectName(QString::fromUtf8("upButton"));
-        upButton->setGeometry(QRect(380, 410, 61, 51));
+        upButton->setGeometry(QRect(400, 410, 61, 51));
         upButton->setStyleSheet(QString::fromUtf8("#upButton{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/pngs/upButton.png);\n"
@@ -502,7 +518,7 @@ public:
 "}"));
         INT = new QLabel(Background);
         INT->setObjectName(QString::fromUtf8("INT"));
-        INT->setGeometry(QRect(385, 370, 61, 31));
+        INT->setGeometry(QRect(400, 360, 61, 31));
         INT->setStyleSheet(QString::fromUtf8("#INT{\n"
 "	background-color: transparent;\n"
 "	border-image: url(:/pngs/INT.png);\n"
@@ -539,10 +555,209 @@ public:
 "onButton:pressed{\n"
 "	border-left: 1px solid rgb(110,144,76);\n"
 "}"));
+        lcdNumber = new QLCDNumber(Background);
+        lcdNumber->setObjectName(QString::fromUtf8("lcdNumber"));
+        lcdNumber->setEnabled(false);
+        lcdNumber->setGeometry(QRect(560, 100, 161, 81));
+        QFont font;
+        font.setFamily(QString::fromUtf8("Noto Sans Adlam"));
+        font.setPointSize(16);
+        font.setBold(true);
+        font.setWeight(75);
+        lcdNumber->setFont(font);
+        lcdNumber->setFrameShape(QFrame::Box);
+        lcdNumber->setLineWidth(2);
+        lcdNumber->setMidLineWidth(1);
+        lcdNumber->setSmallDecimalPoint(false);
+        lcdNumber->setSegmentStyle(QLCDNumber::Outline);
+        historyWidget = new QListWidget(Background);
+        historyWidget->setObjectName(QString::fromUtf8("historyWidget"));
+        historyWidget->setGeometry(QRect(10, 180, 201, 231));
+        historyWidget->setFrameShape(QFrame::Box);
+        historyWidget->setFrameShadow(QFrame::Sunken);
+        historyWidget->setMidLineWidth(1);
+        historyCheckBox = new QCheckBox(Background);
+        historyCheckBox->setObjectName(QString::fromUtf8("historyCheckBox"));
+        historyCheckBox->setGeometry(QRect(510, 410, 261, 31));
+        QPalette palette;
+        QBrush brush(QColor(255, 255, 255, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        palette.setBrush(QPalette::Active, QPalette::Button, brush);
+        palette.setBrush(QPalette::Active, QPalette::Light, brush);
+        palette.setBrush(QPalette::Active, QPalette::Midlight, brush);
+        QBrush brush1(QColor(127, 127, 127, 255));
+        brush1.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Dark, brush1);
+        QBrush brush2(QColor(170, 170, 170, 255));
+        brush2.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Mid, brush2);
+        QBrush brush3(QColor(0, 0, 0, 255));
+        brush3.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Text, brush3);
+        palette.setBrush(QPalette::Active, QPalette::BrightText, brush);
+        palette.setBrush(QPalette::Active, QPalette::ButtonText, brush3);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush);
+        palette.setBrush(QPalette::Active, QPalette::Window, brush);
+        palette.setBrush(QPalette::Active, QPalette::Shadow, brush3);
+        palette.setBrush(QPalette::Active, QPalette::AlternateBase, brush);
+        QBrush brush4(QColor(255, 255, 220, 255));
+        brush4.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::ToolTipBase, brush4);
+        palette.setBrush(QPalette::Active, QPalette::ToolTipText, brush3);
+        QBrush brush5(QColor(0, 0, 0, 128));
+        brush5.setStyle(Qt::SolidPattern);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Active, QPalette::PlaceholderText, brush5);
+#endif
+        palette.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Button, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Light, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Midlight, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Dark, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Mid, brush2);
+        palette.setBrush(QPalette::Inactive, QPalette::Text, brush3);
+        palette.setBrush(QPalette::Inactive, QPalette::BrightText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::ButtonText, brush3);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Window, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Shadow, brush3);
+        palette.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::ToolTipBase, brush4);
+        palette.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush3);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush5);
+#endif
+        palette.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Button, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Light, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Midlight, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Dark, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Mid, brush2);
+        palette.setBrush(QPalette::Disabled, QPalette::Text, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::BrightText, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::ButtonText, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Base, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Window, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::Shadow, brush3);
+        palette.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush);
+        palette.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush4);
+        palette.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush3);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush5);
+#endif
+        historyCheckBox->setPalette(palette);
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("Noto Sans Adlam"));
+        font1.setPointSize(12);
+        font1.setBold(true);
+        font1.setWeight(75);
+        historyCheckBox->setFont(font1);
+        historyCheckBox->setAutoFillBackground(false);
+        historyButton = new QPushButton(Background);
+        historyButton->setObjectName(QString::fromUtf8("historyButton"));
+        historyButton->setGeometry(QRect(70, 430, 61, 51));
+        QPalette palette1;
+        palette1.setBrush(QPalette::Active, QPalette::WindowText, brush3);
+        palette1.setBrush(QPalette::Active, QPalette::Button, brush3);
+        palette1.setBrush(QPalette::Active, QPalette::Light, brush);
+        palette1.setBrush(QPalette::Active, QPalette::Midlight, brush);
+        palette1.setBrush(QPalette::Active, QPalette::Dark, brush1);
+        palette1.setBrush(QPalette::Active, QPalette::Mid, brush2);
+        palette1.setBrush(QPalette::Active, QPalette::Text, brush3);
+        palette1.setBrush(QPalette::Active, QPalette::BrightText, brush);
+        palette1.setBrush(QPalette::Active, QPalette::ButtonText, brush3);
+        palette1.setBrush(QPalette::Active, QPalette::Base, brush3);
+        palette1.setBrush(QPalette::Active, QPalette::Window, brush3);
+        palette1.setBrush(QPalette::Active, QPalette::Shadow, brush3);
+        palette1.setBrush(QPalette::Active, QPalette::AlternateBase, brush);
+        palette1.setBrush(QPalette::Active, QPalette::ToolTipBase, brush4);
+        palette1.setBrush(QPalette::Active, QPalette::ToolTipText, brush3);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette1.setBrush(QPalette::Active, QPalette::PlaceholderText, brush5);
+#endif
+        palette1.setBrush(QPalette::Inactive, QPalette::WindowText, brush3);
+        palette1.setBrush(QPalette::Inactive, QPalette::Button, brush3);
+        palette1.setBrush(QPalette::Inactive, QPalette::Light, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::Midlight, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::Dark, brush1);
+        palette1.setBrush(QPalette::Inactive, QPalette::Mid, brush2);
+        palette1.setBrush(QPalette::Inactive, QPalette::Text, brush3);
+        palette1.setBrush(QPalette::Inactive, QPalette::BrightText, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::ButtonText, brush3);
+        palette1.setBrush(QPalette::Inactive, QPalette::Base, brush3);
+        palette1.setBrush(QPalette::Inactive, QPalette::Window, brush3);
+        palette1.setBrush(QPalette::Inactive, QPalette::Shadow, brush3);
+        palette1.setBrush(QPalette::Inactive, QPalette::AlternateBase, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::ToolTipBase, brush4);
+        palette1.setBrush(QPalette::Inactive, QPalette::ToolTipText, brush3);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette1.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush5);
+#endif
+        palette1.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::Button, brush3);
+        palette1.setBrush(QPalette::Disabled, QPalette::Light, brush);
+        palette1.setBrush(QPalette::Disabled, QPalette::Midlight, brush);
+        palette1.setBrush(QPalette::Disabled, QPalette::Dark, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::Mid, brush2);
+        palette1.setBrush(QPalette::Disabled, QPalette::Text, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::BrightText, brush);
+        palette1.setBrush(QPalette::Disabled, QPalette::ButtonText, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::Base, brush3);
+        palette1.setBrush(QPalette::Disabled, QPalette::Window, brush3);
+        palette1.setBrush(QPalette::Disabled, QPalette::Shadow, brush3);
+        palette1.setBrush(QPalette::Disabled, QPalette::AlternateBase, brush);
+        palette1.setBrush(QPalette::Disabled, QPalette::ToolTipBase, brush4);
+        palette1.setBrush(QPalette::Disabled, QPalette::ToolTipText, brush3);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette1.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush5);
+#endif
+        historyButton->setPalette(palette1);
+        historyButton->setStyleSheet(QString::fromUtf8(""));
+        Background_2 = new QFrame(centralwidget);
+        Background_2->setObjectName(QString::fromUtf8("Background_2"));
+        Background_2->setGeometry(QRect(820, 10, 291, 291));
+        Background_2->setLayoutDirection(Qt::RightToLeft);
+        Background_2->setStyleSheet(QString::fromUtf8(""));
+        Background_2->setFrameShape(QFrame::StyledPanel);
+        Background_2->setFrameShadow(QFrame::Raised);
+        chargeDeviceButton = new QPushButton(Background_2);
+        chargeDeviceButton->setObjectName(QString::fromUtf8("chargeDeviceButton"));
+        chargeDeviceButton->setGeometry(QRect(10, 70, 271, 41));
+        background2Label = new QLabel(Background_2);
+        background2Label->setObjectName(QString::fromUtf8("background2Label"));
+        background2Label->setGeometry(QRect(10, 10, 281, 51));
+        QFont font2;
+        font2.setFamily(QString::fromUtf8("Noto Sans Adlam"));
+        font2.setPointSize(14);
+        font2.setBold(true);
+        font2.setWeight(75);
+        background2Label->setFont(font2);
+        drainBatteryLabel = new QLabel(Background_2);
+        drainBatteryLabel->setObjectName(QString::fromUtf8("drainBatteryLabel"));
+        drainBatteryLabel->setGeometry(QRect(10, 140, 81, 31));
+        drainBattery1 = new QPushButton(Background_2);
+        drainBattery1->setObjectName(QString::fromUtf8("drainBattery1"));
+        drainBattery1->setGeometry(QRect(100, 140, 80, 25));
+        pushButton = new QPushButton(Background_2);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(200, 140, 80, 25));
+        attachToSkinLabel = new QLabel(Background_2);
+        attachToSkinLabel->setObjectName(QString::fromUtf8("attachToSkinLabel"));
+        attachToSkinLabel->setGeometry(QRect(10, 200, 141, 31));
+        attachToSkinLabel->setLayoutDirection(Qt::LeftToRight);
+        contackSkinDropbox = new QComboBox(Background_2);
+        contackSkinDropbox->addItem(QString());
+        contackSkinDropbox->addItem(QString());
+        contackSkinDropbox->setObjectName(QString::fromUtf8("contackSkinDropbox"));
+        contackSkinDropbox->setGeometry(QRect(160, 200, 72, 25));
+        contackSkinDropbox->setLayoutDirection(Qt::LeftToRight);
         MainWindow->setCentralWidget(centralwidget);
+        Background_2->raise();
+        Background->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 22));
+        menubar->setGeometry(QRect(0, 0, 1120, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -592,6 +807,17 @@ public:
         INT->setText(QString());
         checkButton->setText(QString());
         bottomLeft->setText(QString());
+        historyCheckBox->setText(QApplication::translate("MainWindow", "Add treatment to history", nullptr));
+        historyButton->setText(QString());
+        chargeDeviceButton->setText(QApplication::translate("MainWindow", "Charge Device To Full of Bartery ", nullptr));
+        background2Label->setText(QApplication::translate("MainWindow", "Device Internal Simulator", nullptr));
+        drainBatteryLabel->setText(QApplication::translate("MainWindow", "Drain Baterry", nullptr));
+        drainBattery1->setText(QApplication::translate("MainWindow", "-3%", nullptr));
+        pushButton->setText(QApplication::translate("MainWindow", "-10%", nullptr));
+        attachToSkinLabel->setText(QApplication::translate("MainWindow", "Attach Device to Skin:", nullptr));
+        contackSkinDropbox->setItemText(0, QApplication::translate("MainWindow", "True", nullptr));
+        contackSkinDropbox->setItemText(1, QApplication::translate("MainWindow", "False", nullptr));
+
     } // retranslateUi
 
 };

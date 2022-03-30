@@ -2,7 +2,24 @@
 
 Device::Device(QObject *parent) : QObject(parent)
 {
+    batteryDrainAmount = 1;
 
+    connect(treatmentTimer, &QTimer::timeout, this, &Device::updateTreatment);
+    connect(timeoutTimer, &QTimer::timeout, this, &Device::updateTimeout);
+    connect(batteryTimer, &QTimer::timeout, this, &Device::updateBattery);
+
+    timeoutTimer->start(30000);
+    batteryTimer->start(3000);
+
+    battery = new Battery();
+    Session* session = new AlphaSession();
+    curTreatment = new TreatmentData(20, session, 5);
+    turnedOn = false;
+    treatmentInProgress = false;
+    isIdle = false;
+    isRecording = false;
+    isTouchingSkin = true;
+    treatmentTimeRemaining = 0;
 }
 
 Device::~Device()
@@ -10,9 +27,45 @@ Device::~Device()
 
 }
 
-void Device::update()
+void Device::updateTreatment()
 {
-    battery->update();
+    isIdle = false;
+    if (turnedOn && treatmentTimeRemaining-- <= 0){
+        treatmentInProgress = false;
+        treatmentTimer->stop();
+        if (isRecording){
+            recordTreatment();
+        }
+    }
+}
+
+void Device::updateBattery(){
+    if (battery->getPower() <= 0){
+        popupAlert("Battery at 0%. Device will shut down.");
+        powerDown();
+    }
+    else if (turnedOn){
+        if (battery->getPower() == 10){
+            popupAlert("Warning, battery is low at 10%.");
+        }
+        battery->drain(batteryDrainAmount);
+    }
+}
+
+void Device::updateTimeout(){
+    if(isIdle && !treatmentInProgress){
+        powerDown();
+        popupAlert("Treatment not started for 30 seconds. Device will shut down.");
+    }
+    isIdle = true;
+}
+
+void Device::setBatteryInterval(int interval){
+    batteryTimer->setInterval(interval);
+}
+
+void Device::setBatteryAmount(int amount){
+    batteryDrainAmount = amount;
 }
 
 void Device::powerButtonPressed(){
@@ -32,15 +85,6 @@ void Device::powerUp(){
 void Device::powerDown(){
     turnedOn = false;
     timeoutTimer->stop();
-}
-
-void Device::checkTimeout(){
-    if(isIdle && !treatmentInProgress){
-        //timeoutTimer->stop();
-        powerDown();
-        //alert("Treatment not started for 30 seconds. Device will shut down.");
-    }
-    isIdle = true;
 }
 
 void Device::chargeBattery(int amount){
@@ -64,7 +108,8 @@ void Device::setTreatmentTime(int time){
     isIdle = false;
 }
 
-void Device::setFrequency(float freq){
+void Device::setIntensity(int intensity){
+    curTreatment->setIntensity(intensity);
     isIdle = false;
 }
 
@@ -73,14 +118,49 @@ void Device::setSessionType(Session* sessionType){
     isIdle = false;
 }
 
-void Device::setIntensity(int intensity){
-    curTreatment->setIntensity(intensity);
+void Device::setIsRecording(bool b){
+    isRecording = b;
     isIdle = false;
 }
 
+void Device::setTouchingSkin(bool b){
+    isTouchingSkin = b;
+}
+
+int Device::getBatteryPower(){
+    return battery->getPower();
+}
+
+int Device::getTreatmentTime(){
+    return curTreatment->getLength();
+}
+
+int Device::getIntensity(){
+    return curTreatment->getIntensity();
+}
+
+Session* Device::getSessionType(){
+    return curTreatment->getSessionType();
+}
+
+TreatmentData* Device::getRecording(int index){
+    return recordedTreatments.at(index);
+}
+
+int Device::getTreatmentTimeRemaining(){
+    return treatmentTimeRemaining;
+}
+
 void Device::startTreatment(){
-    treatmentInProgress = true;
-    isIdle = false;
+    if(isTouchingSkin){
+        treatmentInProgress = true;
+        isIdle = false;
+        treatmentTimeRemaining = curTreatment->getLength();
+        treatmentTimer->start(1000);
+    }
+    else{
+        popupAlert("Device not in contact with skin, treatment cannot start.");
+    }
 }
 
 void Device::replayRecording(int index){

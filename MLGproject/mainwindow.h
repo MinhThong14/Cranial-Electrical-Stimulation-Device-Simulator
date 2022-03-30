@@ -20,7 +20,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private slots:
+/*private slots:
     void increaseFrequency();
     void decreaseFrequency();
     void changeWaveType();
@@ -32,7 +32,7 @@ private slots:
     void manuallyDrainTheBattery();
     void displayBattery();
     void displayHistory();
-    void addToHistoryPressed();
+    void addToHistoryPressed();*/
 
 private:
     Ui::MainWindow *ui;

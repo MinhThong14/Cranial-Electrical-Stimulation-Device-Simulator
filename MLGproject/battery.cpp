@@ -5,10 +5,6 @@ Battery::Battery() {
     logging = true;
 }
 
-void Battery::update(){
-    drain(1);
-}
-
 void Battery::setLogging(bool doLog) {
     logging = doLog;
 }
