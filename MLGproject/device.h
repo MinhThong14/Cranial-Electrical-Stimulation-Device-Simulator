@@ -23,7 +23,9 @@ class Device : public QObject
 public:
     Device(QObject *parent = NULL);
     ~Device();
-    void update();
+    void updateTreatment();
+    void updateBattery();
+    void updateTimeout();
 
     void powerButtonPressed();
     void chargeBattery(int amount);
@@ -36,6 +38,17 @@ public:
     void setIntensity(int intensity);
     void setFrequency(float freq);
     void setSessionType(Session* sessionType);
+    void setBatteryInterval(int interval);
+    void setBatteryAmount(int amount);
+    void setIsRecording(bool b);
+    void setTouchingSkin(bool b);
+
+    int getTreatmentTime();
+    int getIntensity();
+    int getBatteryPower();
+    Session* getSessionType();
+    TreatmentData* getRecording(int index);
+    int getTreatmentTimeRemaining();
 
     void startTreatment();
     void replayRecordedTreatment(int index);
@@ -43,25 +56,23 @@ public:
 
 private:
     Battery* battery;
-    QTimer* UpdateTimer;
+    QTimer* treatmentTimer;
     QTimer* timeoutTimer;
+    QTimer* batteryTimer;
     QList<TreatmentData*> recordedTreatments;
     TreatmentData* curTreatment;
     bool turnedOn;
     bool treatmentInProgress;
     bool isIdle;
-
-    /*void disableAllButtons();
-    void disableButton(QString);
-    void enableAllButtons();
-    void enableButton(QString);*/
+    bool isRecording;
+    bool isTouchingSkin;
+    int batteryDrainAmount;
+    int treatmentTimeRemaining;
 
     void alert(QString);
     void displayLowBattery();
     void powerUp();
     void powerDown();
-    void checkTimeout();
-    void init();
 };
 
 #endif // DEVICE_H
