@@ -22,6 +22,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     session.cpp \
+    timer.cpp \
     treatmentdata.cpp
 
 HEADERS += \
@@ -31,6 +32,7 @@ HEADERS += \
     mainwindow.h \
     session.h \
     sessiontypes.h \
+    timer.h \
     treatmentdata.h
 
 FORMS += \
