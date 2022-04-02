@@ -19,3 +19,7 @@ float Session::getBottomFrequency() {
 float Session::getTopFrequency() {
     return freqRangeEnd;
 }
+
+string Session::getFrequencyRange() {
+    return (to_string(freqRangeStart) + " Hz - " + to_string(freqRangeEnd) + " Hz");
+}

@@ -6,7 +6,7 @@
 #include <QString>
 #include <QMessageBox>
 #include <log.h>
-#include <treatmentdata.h>
+#include <device.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,19 +20,33 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-/*private slots:
-    void increaseFrequency();
-    void decreaseFrequency();
-    void changeWaveType();
-    void pressStartButton();
-    void isReadyToStart(bool isReady);
-    void toggleSkinTouch(QString value);
-    void reduceTime();
-    void drainBattery();
-    void manuallyDrainTheBattery();
-    void displayBattery();
-    void displayHistory();
-    void addToHistoryPressed();*/
+private slots:
+    void powerButton();
+    void startButton();
+    void drainBatteryBy3();
+    void drainBatteryBy10();
+    void chargeBatteryToFull();
+    void increaseIntensity();
+    void decreaseIntensity();
+    void toggleAttachment(const QString&);
+    void select20MinSession();
+    void select45MinSession();
+    void selectAlphaSession();
+    void selectBetaSession();
+    void selectDeltaSession();
+    void selectThetaSession();
+
+    //void increaseFrequency();
+    //void decreaseFrequency();
+    //void changeWaveType();
+    //void pressStartButton();
+    //void isReadyToStart(bool isReady);
+    //void toggleSkinTouch(QString value);
+    //void reduceTime();
+    //void manuallyDrainTheBattery();
+    //void displayBattery();
+    //void displayHistory();
+    //void addToHistoryPressed();
 
 private:
     Ui::MainWindow *ui;
@@ -40,6 +54,9 @@ private:
     bool isTimeZero;
     int skin5sTimer = 0;
     int timmer30s = 0;
+
+    Device* device;
+
     void check30Seconds();
     void showAlert(QString message= "");
     void resetAllVariables();

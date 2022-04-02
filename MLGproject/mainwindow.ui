@@ -302,306 +302,6 @@ onButton:pressed{
       <string/>
      </property>
     </widget>
-    <widget class="QLabel" name="topMiddleLess">
-     <property name="geometry">
-      <rect>
-       <x>190</x>
-       <y>80</y>
-       <width>31</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">#topMiddleLess{
-	background-color: transparent;
-	border-image: url(:/pngs/topMiddleLess.png);
-	background: none;
-	border: none;
-	background-repeat: none;
-}
-onButton:pressed{
-	border-left: 1px solid rgb(110,144,76);
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="topMiddleMore">
-     <property name="geometry">
-      <rect>
-       <x>240</x>
-       <y>80</y>
-       <width>31</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">#topMiddleMore{
-	background-color: transparent;
-	border-image: url(:/pngs/topMiddleMore.png);
-	background: none;
-	border: none;
-	background-repeat: none;
-}
-onButton:pressed{
-	border-left: 1px solid rgb(110,144,76);
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="topMiddle3h">
-     <property name="geometry">
-      <rect>
-       <x>290</x>
-       <y>80</y>
-       <width>31</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">#topMiddle3h{
-	background-color: transparent;
-	border-image: url(:/pngs/topMiddle3h.png);
-	background: none;
-	border: none;
-	background-repeat: none;
-}
-onButton:pressed{
-	border-left: 1px solid rgb(110,144,76);
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="topMiddlePlus">
-     <property name="geometry">
-      <rect>
-       <x>340</x>
-       <y>80</y>
-       <width>31</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">#topMiddlePlus{
-	background-color: transparent;
-	border-image: url(:/pngs/topMiddlePlus.png);
-	background: none;
-	border: none;
-	background-repeat: none;
-}
-onButton:pressed{
-	border-left: 1px solid rgb(110,144,76);
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="topMiddleMET">
-     <property name="geometry">
-      <rect>
-       <x>130</x>
-       <y>130</y>
-       <width>21</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">#topMiddleMET{
-	background-color: transparent;
-	border-image: url(:/pngs/topMiddleMET.png);
-	background: none;
-	border: none;
-	background-repeat: none;
-}
-onButton:pressed{
-	border-left: 1px solid rgb(110,144,76);
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="topMiddleSA">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>130</y>
-       <width>21</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">#topMiddleSA{
-	background-color: transparent;
-	border-image: url(:/pngs/topMiddleSA.png);
-	background: none;
-	border: none;
-	background-repeat: none;
-}
-onButton:pressed{
-	border-left: 1px solid rgb(110,144,76);
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="topMiddleA">
-     <property name="geometry">
-      <rect>
-       <x>210</x>
-       <y>130</y>
-       <width>21</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">#topMiddleA{
-	background-color: transparent;
-	border-image: url(:/pngs/topMiddleA.png);
-	background: none;
-	border: none;
-	background-repeat: none;
-}
-onButton:pressed{
-	border-left: 1px solid rgb(110,144,76);
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="topMiddleOmega">
-     <property name="geometry">
-      <rect>
-       <x>240</x>
-       <y>130</y>
-       <width>21</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">#topMiddleOmega{
-	background-color: transparent;
-	border-image: url(:/pngs/topMiddleOmega.png);
-	background: none;
-	border: none;
-	background-repeat: none;
-}
-onButton:pressed{
-	border-left: 1px solid rgb(110,144,76);
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="topMiddleAlpha">
-     <property name="geometry">
-      <rect>
-       <x>270</x>
-       <y>130</y>
-       <width>21</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">#topMiddleAlpha{
-	background-color: transparent;
-	border-image: url(:/pngs/topMiddleAlpha.png);
-	background: none;
-	border: none;
-	background-repeat: none;
-}
-onButton:pressed{
-	border-left: 1px solid rgb(110,144,76);
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="topMiddleBeta1">
-     <property name="geometry">
-      <rect>
-       <x>310</x>
-       <y>130</y>
-       <width>21</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">#topMiddleBeta1{
-	background-color: transparent;
-	border-image: url(:/pngs/topMiddleBeta1.png);
-	background: none;
-	border: none;
-	background-repeat: none;
-}
-onButton:pressed{
-	border-left: 1px solid rgb(110,144,76);
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="topMiddleBeta2">
-     <property name="geometry">
-      <rect>
-       <x>340</x>
-       <y>130</y>
-       <width>21</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">#topMiddleBeta2{
-	background-color: transparent;
-	border-image: url(:/pngs/topMiddleBeta2.png);
-	background: none;
-	border: none;
-	background-repeat: none;
-}
-onButton:pressed{
-	border-left: 1px solid rgb(110,144,76);
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="topMiddle100HZ">
-     <property name="geometry">
-      <rect>
-       <x>370</x>
-       <y>130</y>
-       <width>31</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">#topMiddle100HZ{
-	background-color: transparent;
-	border-image: url(:/pngs/topMiddle100HZ.png);
-	background: none;
-	border: none;
-	background-repeat: none;
-}
-onButton:pressed{
-	border-left: 1px solid rgb(110,144,76);
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
     <widget class="QLabel" name="tDCS">
      <property name="geometry">
       <rect>
@@ -1006,9 +706,9 @@ onButton:pressed{
         <colorrole role="Button">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
@@ -1078,18 +778,18 @@ onButton:pressed{
         <colorrole role="Base">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
         <colorrole role="Window">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
@@ -1152,9 +852,9 @@ onButton:pressed{
         <colorrole role="Button">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
@@ -1224,18 +924,18 @@ onButton:pressed{
         <colorrole role="Base">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
         <colorrole role="Window">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
@@ -1298,9 +998,9 @@ onButton:pressed{
         <colorrole role="Button">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
@@ -1370,18 +1070,18 @@ onButton:pressed{
         <colorrole role="Base">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
         <colorrole role="Window">
          <brush brushstyle="SolidPattern">
           <color alpha="255">
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
@@ -1906,6 +1606,118 @@ onButton:pressed{
       <string/>
      </property>
     </widget>
+    <widget class="QPushButton" name="alphaButton">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>130</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/pngs/topMiddleAlpha.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="betaButton">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>130</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/pngs/topMiddleBeta1.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="deltaButton">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>130</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/pngs/topMiddleA.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="thetaButton">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>130</y>
+       <width>21</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/pngs/topMiddleOmega.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="time20Button">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>70</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/pngs/topMiddleLess.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="time45Button">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>70</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/pngs/topMiddleMore.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="timeCustomButton">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>70</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/pngs/topMiddlePlus.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </widget>
    <widget class="QFrame" name="Background_2">
     <property name="geometry">
@@ -1988,7 +1800,7 @@ onButton:pressed{
       <string>-3%</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="drainBattery2">
      <property name="geometry">
       <rect>
        <x>200</x>

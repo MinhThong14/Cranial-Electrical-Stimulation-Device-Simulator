@@ -9,8 +9,6 @@
 
 #include <log.h>
 #include <battery.h>
-#include <session.h>
-#include <sessiontypes.h>
 #include <treatmentdata.h>
 
 #include <string.h>
@@ -31,17 +29,19 @@ public:
     void chargeBattery(int amount);
     void drainBattery(int amount);
     void setBatteryCharge(int value);
+    void fullCharge();
     void powerSurge();
 
     void replayRecording(int index);
     void setTreatmentTime(int time);
-    void setIntensity(int intensity);
-    void setFrequency(float freq);
     void setSessionType(Session* sessionType);
+    void setIntensity(int i);
     void setBatteryInterval(int interval);
     void setBatteryAmount(int amount);
     void setIsRecording(bool b);
     void setTouchingSkin(bool b);
+    void increaseIntensity();
+    void decreaseIntensity();
 
     int getTreatmentTime();
     int getIntensity();
@@ -66,8 +66,8 @@ private:
     bool isIdle;
     bool isRecording;
     bool isTouchingSkin;
-    int batteryDrainAmount;
     int treatmentTimeRemaining;
+    int drainBatteryBy;
 
     void alert(QString);
     void displayLowBattery();

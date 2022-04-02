@@ -14,6 +14,7 @@ public:
     void setLength(int l);
     void setSessionType(Session* s);
     void setIntensity(int i);
+    string getSessionString();
 
 private:
     int lengthInSecs;
