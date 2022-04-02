@@ -27,9 +27,14 @@ void TreatmentData::setLength(int l) {
 }
 
 void TreatmentData::setSessionType(Session* s) {
+    delete sessionType;
     sessionType = s;
 }
 
 void TreatmentData::setIntensity(int i) {
     intensity = i;
+}
+
+string TreatmentData::getSessionString() {
+    return (sessionType->getName() + ": " + sessionType->getFrequencyRange());
 }

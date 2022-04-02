@@ -11,6 +11,7 @@ public:
     string getName();
     float getBottomFrequency();
     float getTopFrequency();
+    string getFrequencyRange();
 
 protected:
     Session(string n, float s, float e);
