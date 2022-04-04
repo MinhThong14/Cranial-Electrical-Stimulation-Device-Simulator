@@ -8,6 +8,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     device = new Device();
 
+    updateTimer = new QTimer();
+    connect(updateTimer, &QTimer::timeout, this, &MainWindow::update);
+    updateTimer->start(1);
+
     connect(ui->onButton, SIGNAL(released()), this, SLOT (powerButton()));
     connect(ui->checkButton, SIGNAL(released()), this, SLOT (startButton()));
     connect(ui->drainBattery1, SIGNAL(released()), this, SLOT (drainBatteryBy3()));
@@ -25,6 +29,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->deltaButton, SIGNAL(clicked()), this, SLOT (selectDeltaSession()));
     connect(ui->thetaButton, SIGNAL(clicked()), this, SLOT (selectThetaSession()));
 
+    ui->batteryBar->setTextVisible(false);
+
     log("Application Started");
 }
 
@@ -32,6 +38,12 @@ MainWindow::~MainWindow()
 {
     delete ui;
     delete device;
+}
+
+void MainWindow::update(){
+    ui->batteryBar->setValue(device->getBatteryPower());
+    ui->intensityCounter->display(device->getIntensity());
+    ui->lcdNumber->display(device->getTreatmentTimeRemaining());
 }
 
 void MainWindow::powerButton() {

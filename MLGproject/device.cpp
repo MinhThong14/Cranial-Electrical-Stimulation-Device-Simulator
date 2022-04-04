@@ -38,8 +38,7 @@ void Device::updateTreatment()
 {
     if(turnedOn && treatmentInProgress){
         isIdle = false;
-        log("Treatment Time: " + to_string(treatmentTimeRemaining));
-        if (treatmentTimeRemaining-- <= 0){
+        if (--treatmentTimeRemaining <= 0){
             treatmentInProgress = false;
             if (isRecording){
                 recordTreatment();
