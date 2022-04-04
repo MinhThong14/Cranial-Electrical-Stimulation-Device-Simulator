@@ -5,7 +5,7 @@
 #include <QTimer>
 #include <QString>
 #include <QMessageBox>
-#include <log.h>
+
 #include <device.h>
 
 QT_BEGIN_NAMESPACE
@@ -19,6 +19,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+private:
+    void update();
 
 private slots:
     void powerButton();
@@ -56,6 +59,7 @@ private:
     int timmer30s = 0;
 
     Device* device;
+    QTimer* updateTimer;
 
     void check30Seconds();
     void showAlert(QString message= "");
