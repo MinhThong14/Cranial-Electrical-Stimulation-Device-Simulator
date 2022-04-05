@@ -31,6 +31,7 @@ private slots:
     void chargeBatteryToFull();
     void increaseIntensity();
     void decreaseIntensity();
+    void toggleCheckbox(bool checked);
     void toggleAttachment(const QString&);
     void select20MinSession();
     void select45MinSession();

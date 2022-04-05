@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->chargeDeviceButton, SIGNAL(released()), this, SLOT (chargeBatteryToFull()));
     connect(ui->upButton, SIGNAL(released()), this, SLOT (increaseIntensity()));
     connect(ui->downButton, SIGNAL(released()), this, SLOT (decreaseIntensity()));
+    connect(ui->checkBox,SIGNAL(clicked(bool)),this,SLOT(toggleCheckbox(bool)));
     connect(ui->contackSkinDropbox,SIGNAL(currentIndexChanged(const QString&)),
             this,SLOT(toggleAttachment(const QString&)));
 
@@ -77,6 +78,10 @@ void MainWindow::increaseIntensity(){
 
 void MainWindow::decreaseIntensity(){
     device->decreaseIntensity();
+}
+
+void MainWindow::toggleCheckbox(bool checked){
+    device->setIsRecording(checked);
 }
 
 void MainWindow::toggleAttachment(const QString& value){
