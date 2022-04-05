@@ -1256,6 +1256,12 @@ border-color: rgb(173, 238, 233);</string>
      <property name="value">
       <number>24</number>
      </property>
+     <property name="textVisible">
+      <bool>false</bool>
+     </property>
+     <property name="textDirection">
+      <enum>QProgressBar::TopToBottom</enum>
+     </property>
     </widget>
     <widget class="QLabel" name="batteryLabel">
      <property name="geometry">
@@ -1344,7 +1350,7 @@ color: #fdfdfc;</string>
       </rect>
      </property>
      <property name="text">
-      <string>Charge Device To Full of Bartery </string>
+      <string>Charge Device To Full of Battery </string>
      </property>
     </widget>
     <widget class="QLabel" name="background2Label">
