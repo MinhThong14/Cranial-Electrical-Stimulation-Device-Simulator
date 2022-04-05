@@ -54,6 +54,8 @@ public:
     void replayRecordedTreatment(int index);
     void recordTreatment();
 
+    bool isPowerOn();
+
 private:
     Battery* battery;
     QTimer* treatmentTimer;

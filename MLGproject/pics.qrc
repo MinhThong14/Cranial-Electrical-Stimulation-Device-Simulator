@@ -19,7 +19,6 @@
         <file>pngs/bottomLeft.png</file>
         <file>pngs/checkButton.png</file>
         <file>pngs/INT.png</file>
-        <file>pngs/Steps.txt</file>
         <file>pngs/tDCS.png</file>
         <file>pngs/topLeft.png</file>
         <file>pngs/topMiddle3h.png</file>
@@ -38,5 +37,7 @@
         <file>pngs/topRight3.png</file>
         <file>pngs/topRight4.png</file>
         <file>pngs/upButton.png</file>
+        <file>pngs/hButton.png</file>
+        <file>pngs/onLightGreen.png</file>
     </qresource>
 </RCC>

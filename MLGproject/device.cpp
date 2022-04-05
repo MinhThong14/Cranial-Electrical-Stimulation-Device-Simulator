@@ -227,3 +227,7 @@ void Device::recordTreatment(){
     recordedTreatments.append(curTreatment);
 }
 
+bool Device::isPowerOn(){
+    return turnedOn;
+}
+
