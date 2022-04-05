@@ -104,9 +104,6 @@ void Device::powerDown(){
     timeoutTimer->stop();
     treatmentTimer->stop();
 
-    setTreatmentTime(20);
-    setSessionType(new AlphaSession());
-    setIntensity(5);
     treatmentTimeRemaining = 0;
 }
 
