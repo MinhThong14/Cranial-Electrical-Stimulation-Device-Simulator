@@ -47,11 +47,19 @@ void MainWindow::update(){
     ui->batteryBar->setValue(device->getBatteryPower());
     ui->intensityCounter->display(device->getIntensity());
     ui->lcdNumber->display(device->getTreatmentTimeRemaining());
+
+    if(device->isPowerOn()){
+        ui->onLight->setStyleSheet("#onLight{border-image: url(:/pngs/onLightGreen.png);}");
+
+    }else{
+        ui->onLight->setStyleSheet("#onLight{border-image: url(:/pngs/onLight.png);}");
+    }
 }
 
 void MainWindow::powerButton() {
     device->powerButtonPressed();
     log("Power Button pressed");
+    //ui->onLight->setStyleSheet("#onLight{border-image: url(:/pngs/onLightGreen.png);}");
 }
 
 void MainWindow::startButton() {
