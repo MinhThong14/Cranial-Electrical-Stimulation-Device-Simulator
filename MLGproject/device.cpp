@@ -39,6 +39,7 @@ void Device::updateTreatment()
     if(turnedOn && treatmentInProgress){
         isIdle = false;
         if (--treatmentTimeRemaining <= 0){
+            treatmentTimeRemaining = 0;
             treatmentInProgress = false;
             if (isRecording){
                 recordTreatment();
@@ -106,6 +107,7 @@ void Device::powerDown(){
     setTreatmentTime(20);
     setSessionType(new AlphaSession());
     setIntensity(5);
+    treatmentTimeRemaining = 0;
 }
 
 void Device::chargeBattery(int amount){

@@ -34,22 +34,11 @@ private slots:
     void toggleAttachment(const QString&);
     void select20MinSession();
     void select45MinSession();
+    void selectCustomSession();
     void selectAlphaSession();
     void selectBetaSession();
     void selectDeltaSession();
     void selectThetaSession();
-
-    //void increaseFrequency();
-    //void decreaseFrequency();
-    //void changeWaveType();
-    //void pressStartButton();
-    //void isReadyToStart(bool isReady);
-    //void toggleSkinTouch(QString value);
-    //void reduceTime();
-    //void manuallyDrainTheBattery();
-    //void displayBattery();
-    //void displayHistory();
-    //void addToHistoryPressed();
 
 private:
     Ui::MainWindow *ui;
@@ -61,9 +50,10 @@ private:
     Device* device;
     QTimer* updateTimer;
 
-    void check30Seconds();
-    void showAlert(QString message= "");
-    void resetAllVariables();
+    enum SessionTimeType {time20, time45, timeCustom};
+    SessionTimeType selectedTime = time20;
+
+    void setSessionTime();
 
 };
 #endif // MAINWINDOW_H

@@ -24,12 +24,14 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->time20Button, SIGNAL(clicked()), this, SLOT (select20MinSession()));
     connect(ui->time45Button, SIGNAL(clicked()), this, SLOT (select45MinSession()));
+    connect(ui->customTimeButton, SIGNAL(clicked()), this, SLOT (selectCustomSession()));
     connect(ui->alphaButton, SIGNAL(clicked()), this, SLOT (selectAlphaSession()));
     connect(ui->betaButton, SIGNAL(clicked()), this, SLOT (selectBetaSession()));
     connect(ui->deltaButton, SIGNAL(clicked()), this, SLOT (selectDeltaSession()));
     connect(ui->thetaButton, SIGNAL(clicked()), this, SLOT (selectThetaSession()));
 
     ui->batteryBar->setTextVisible(false);
+    ui->customTimeBox->setValidator(new QIntValidator(0, 100, this));
 
     log("Application Started");
 }
@@ -52,6 +54,7 @@ void MainWindow::powerButton() {
 }
 
 void MainWindow::startButton() {
+    setSessionTime();
     device->startTreatment();
     log("Start Button pressed");
 }
@@ -70,12 +73,10 @@ void MainWindow::chargeBatteryToFull() {
 
 void MainWindow::increaseIntensity(){
     device->increaseIntensity();
-    log("Intensity is now " + to_string(device->getIntensity()));
 }
 
 void MainWindow::decreaseIntensity(){
     device->decreaseIntensity();
-    log("Intensity is now " + to_string(device->getIntensity()));
 }
 
 void MainWindow::toggleAttachment(const QString& value){
@@ -88,13 +89,18 @@ void MainWindow::toggleAttachment(const QString& value){
 }
 
 void MainWindow::select20MinSession(){
-    device->setTreatmentTime(20);
+    selectedTime = time20;
     log("Selected 20 minute session");
 }
 
 void MainWindow::select45MinSession(){
-    device->setTreatmentTime(45);
+    selectedTime = time45;
     log("Selected 45 minute session");
+}
+
+void MainWindow::selectCustomSession(){
+    selectedTime = timeCustom;
+    log("Selected custom time session");
 }
 
 void MainWindow::selectAlphaSession(){
@@ -115,4 +121,22 @@ void MainWindow::selectDeltaSession(){
 void MainWindow::selectThetaSession(){
     device->setSessionType(new ThetaSession);
     log("Selected Theta session");
+}
+
+void MainWindow::setSessionTime() {
+    int time = 0;
+    switch(selectedTime)
+    {
+        case time20:
+            time = 20;
+            break;
+        case time45:
+            time = 45;
+            break;
+        case timeCustom:
+            QString timeString = ui->customTimeBox->text();
+            time = timeString.toInt();
+            break;
+    }
+    device->setTreatmentTime(time);
 }
