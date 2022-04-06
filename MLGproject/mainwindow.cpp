@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->onButton, SIGNAL(released()), this, SLOT (powerButton()));
     connect(ui->checkButton, SIGNAL(released()), this, SLOT (startButton()));
+    connect(ui->historyButton, SIGNAL(released()), this, SLOT (historyButton()));
     connect(ui->drainBattery1, SIGNAL(released()), this, SLOT (drainBatteryBy3()));
     connect(ui->drainBattery2, SIGNAL(released()), this, SLOT (drainBatteryBy10()));
     connect(ui->chargeDeviceButton, SIGNAL(released()), this, SLOT (chargeBatteryToFull()));
@@ -53,19 +54,39 @@ void MainWindow::update(){
 
     }else{
         ui->onLight->setStyleSheet("#onLight{border-image: url(:/pngs/onLight.png);}");
+        ui->treatmentList->clear();
+        ui->customTimeBox->clear();
     }
 }
 
 void MainWindow::powerButton() {
     device->powerButtonPressed();
-    log("Power Button pressed");
-    //ui->onLight->setStyleSheet("#onLight{border-image: url(:/pngs/onLightGreen.png);}");
+    setup();
+}
+
+void MainWindow::setup() {
+    if(device->isPowerOn()){
+        QList<TreatmentData*>* treatments = device->getRecordedTreatments();
+        for(int i = treatments->length() - 1; i >= 0; i--){
+            TreatmentData* treatment = treatments->at(i);
+            string treatmentLabel = "T" + to_string(treatments->length() - i) + ": "
+                    + to_string(treatment->getLength()) + " min, "
+                    + treatment->getSessionType()->getName() + ", "
+                    + "Int " + to_string(treatment->getIntensity());
+            ui->treatmentList->addItem(QString::fromStdString(treatmentLabel));
+        }
+    }
 }
 
 void MainWindow::startButton() {
     setSessionTime();
     device->startTreatment();
-    log("Start Button pressed");
+}
+
+void MainWindow::historyButton() {
+    int index = (ui->treatmentList->currentIndex()).row();
+    selectedTime = timeCustom;
+    device->replayRecording(index);
 }
 
 void MainWindow::drainBatteryBy3() {
@@ -138,8 +159,7 @@ void MainWindow::selectThetaSession(){
 
 void MainWindow::setSessionTime() {
     int time = 0;
-    switch(selectedTime)
-    {
+    switch(selectedTime) {
         case time20:
             time = 20;
             break;

@@ -49,12 +49,12 @@ public:
     Session* getSessionType();
     TreatmentData* getRecording(int index);
     int getTreatmentTimeRemaining();
+    bool isPowerOn();
+    QList<TreatmentData*>* getRecordedTreatments();
 
     void startTreatment();
     void replayRecordedTreatment(int index);
     void recordTreatment();
-
-    bool isPowerOn();
 
 private:
     Battery* battery;
@@ -75,6 +75,7 @@ private:
     void displayLowBattery();
     void powerUp();
     void powerDown();
+    TreatmentData* copyTreatment(TreatmentData* treatment);
 };
 
 #endif // DEVICE_H

@@ -22,10 +22,12 @@ public:
 
 private:
     void update();
+    void setup();
 
 private slots:
     void powerButton();
     void startButton();
+    void historyButton();
     void drainBatteryBy3();
     void drainBatteryBy10();
     void chargeBatteryToFull();
