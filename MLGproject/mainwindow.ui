@@ -746,6 +746,19 @@ downButton:pressed{
       <string/>
      </property>
     </widget>
+    <widget class="QListWidget" name="treatmentList">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>190</y>
+       <width>141</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QFrame" name="Background_2">
     <property name="geometry">
@@ -883,8 +896,8 @@ downButton:pressed{
     <widget class="QCheckBox" name="checkBox">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>240</y>
+       <x>10</x>
+       <y>250</y>
        <width>211</width>
        <height>23</height>
       </rect>
@@ -982,17 +995,21 @@ downButton:pressed{
      </property>
      <property name="font">
       <font>
-       <family>Noto Sans Adlam</family>
-       <pointsize>11</pointsize>
+       <family>Noto Sans</family>
+       <pointsize>9</pointsize>
        <weight>50</weight>
+       <italic>false</italic>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
      </property>
      <property name="autoFillBackground">
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">font: 9pt &quot;Noto Sans&quot;;</string>
      </property>
      <property name="text">
       <string>Add Treatment To History</string>

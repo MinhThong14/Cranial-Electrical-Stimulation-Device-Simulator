@@ -32,6 +32,10 @@ Device::~Device() {
     delete treatmentTimer;
     delete timeoutTimer;
     delete batteryTimer;
+
+    for(int i = 0; i < recordedTreatments.length(); i++){
+        delete recordedTreatments.at(i);
+    }
 }
 
 void Device::updateTreatment()
@@ -157,7 +161,7 @@ void Device::setTouchingSkin(bool b){
 }
 
 void Device::increaseIntensity(){
-    if(turnedOn && treatmentInProgress){
+    if(turnedOn){
         int intensity = curTreatment->getIntensity();
         if(intensity < 8){
             curTreatment->setIntensity(intensity + 1);
@@ -166,7 +170,7 @@ void Device::increaseIntensity(){
 }
 
 void Device::decreaseIntensity(){
-    if(turnedOn && treatmentInProgress){
+    if(turnedOn){
         int intensity = curTreatment->getIntensity();
         if(intensity > 1){
             curTreatment->setIntensity(intensity - 1);
@@ -198,6 +202,14 @@ int Device::getTreatmentTimeRemaining(){
     return treatmentTimeRemaining;
 }
 
+bool Device::isPowerOn(){
+    return turnedOn;
+}
+
+QList<TreatmentData*>* Device::getRecordedTreatments(){
+    return &recordedTreatments;
+}
+
 void Device::startTreatment(){
     if(turnedOn && !treatmentInProgress){
         if(isTouchingSkin){
@@ -214,20 +226,41 @@ void Device::startTreatment(){
 }
 
 void Device::replayRecording(int index){
-    delete curTreatment;
-    TreatmentData* recTreatment = recordedTreatments.at(index);
-    curTreatment = new TreatmentData(
-                recTreatment->getLength(),
-                recTreatment->getSessionType(),
-                recTreatment->getIntensity()
-    );
+    if(index >= 0 && index < recordedTreatments.length()){
+        delete curTreatment;
+        TreatmentData* recTreatment = recordedTreatments.at(recordedTreatments.length() - index - 1);
+        curTreatment = copyTreatment(recTreatment);
+        startTreatment();
+    }
 }
 
 void Device::recordTreatment(){
-    recordedTreatments.append(curTreatment);
+    TreatmentData* newTreatment = copyTreatment(curTreatment);
+    recordedTreatments.append(newTreatment);
 }
 
-bool Device::isPowerOn(){
-    return turnedOn;
+TreatmentData* Device::copyTreatment(TreatmentData* treatment){
+    string sessionName = treatment->getSessionType()->getName();
+    Session* session;
+
+    if(sessionName == "Alpha") {
+        session = new AlphaSession();
+    }
+    else if(sessionName == "Beta 1") {
+        session = new BetaSession();
+    }
+    else if(sessionName == "Delta") {
+        session = new DeltaSession();
+    }
+    else if(sessionName == "Theta") {
+        session = new ThetaSession();
+    }
+
+    TreatmentData* newTreatment = new TreatmentData(
+                treatment->getLength(),
+                session,
+                treatment->getIntensity());
+
+    return newTreatment;
 }
 
