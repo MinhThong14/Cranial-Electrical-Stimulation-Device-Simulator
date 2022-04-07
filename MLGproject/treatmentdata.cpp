@@ -35,6 +35,7 @@ void TreatmentData::setIntensity(int i) {
     intensity = i;
 }
 
+//Returns a string representing this session
 string TreatmentData::getSessionString() {
     return (sessionType->getName() + ": " + sessionType->getFrequencyRange());
 }

@@ -20,6 +20,7 @@ float Session::getTopFrequency() {
     return freqRangeEnd;
 }
 
+//Returns a string containing the frequency range of this session
 string Session::getFrequencyRange() {
     return (to_string(freqRangeStart) + " Hz - " + to_string(freqRangeEnd) + " Hz");
 }

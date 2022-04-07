@@ -20,6 +20,7 @@ void Battery::setPower(int amount) {
     }
 }
 
+//Charges the battery by a provided amount
 void Battery::charge(int amount) {
     if(amount < 0){
         return;
@@ -33,11 +34,13 @@ void Battery::charge(int amount) {
     logPower();
 }
 
+//Charges the battery to full
 void Battery::fullCharge() {
     power = 100;
     logPower();
 }
 
+//Drains the battery by a provided amount
 void Battery::drain(int amount) {
     if(amount < 0){
         return;
@@ -51,19 +54,23 @@ void Battery::drain(int amount) {
     logPower();
 }
 
+//Fully drains the battery
 void Battery::fullDrain() {
     power = 0;
     logPower();
 }
 
+//Checks if the battery is at least a certain amount
 bool Battery::isPowerAtLeast(int amount) {
     return (amount <= power);
 }
 
+//Checks if the battery is dead
 bool Battery::isBatteryDead() {
     return (power <= 0);
 }
 
+//Logs the current % charge of the battery
 void Battery::logPower() {
     if(logging){
         log(("Battery: " + to_string(power) + "%"));

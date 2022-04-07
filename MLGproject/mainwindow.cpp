@@ -44,6 +44,7 @@ MainWindow::~MainWindow()
     delete device;
 }
 
+//Updates the Main Window GUI every fraction of a second
 void MainWindow::update(){
     ui->batteryBar->setValue(device->getBatteryPower());
     ui->intensityCounter->display(device->getIntensity());
@@ -59,11 +60,13 @@ void MainWindow::update(){
     }
 }
 
+//Reacts to the power button being pressed, turning the device on/off
 void MainWindow::powerButton() {
     device->powerButtonPressed();
     setup();
 }
 
+//Sets up the Main Window GUI for when the device is on
 void MainWindow::setup() {
     if(device->isPowerOn()){
         QList<TreatmentData*>* treatments = device->getRecordedTreatments();
@@ -78,41 +81,52 @@ void MainWindow::setup() {
     }
 }
 
+//Reacts to the start button being pressed, attempting to start a treatment
 void MainWindow::startButton() {
     setSessionTime();
     device->startTreatment();
 }
 
+//Reacts to the history button being pressed, attempting to start a selected recorded treatment
 void MainWindow::historyButton() {
     int index = (ui->treatmentList->currentIndex()).row();
     selectedTime = timeCustom;
     device->replayRecording(index);
 }
 
+//Drains the device battery by 3%
 void MainWindow::drainBatteryBy3() {
     device->drainBattery(3);
 }
 
+//Drains the device battery by 10%
 void MainWindow::drainBatteryBy10() {
     device->drainBattery(10);
 }
 
+//Charges the device battery to full
 void MainWindow::chargeBatteryToFull() {
     device->fullCharge();
 }
 
+//Reacts to the increase intensity button being pressed,
+//attempting to increase the treatment intensity
 void MainWindow::increaseIntensity(){
     device->increaseIntensity();
 }
 
+//Reacts to the decrease intensity button being pressed,
+//attempting to decrease the treatment intensity
 void MainWindow::decreaseIntensity(){
     device->decreaseIntensity();
 }
 
+//Reacts to the 'Add Treatment To History' checkbox being toggled and sets the device accordingly
 void MainWindow::toggleCheckbox(bool checked){
     device->setIsRecording(checked);
 }
 
+//Reacts to the 'Attach Device to Skin' dropdown being toggled and sets the device accordingly
 void MainWindow::toggleAttachment(const QString& value){
     if(value.toStdString() == "True"){
         device->setTouchingSkin(true);
@@ -122,41 +136,49 @@ void MainWindow::toggleAttachment(const QString& value){
     }
 }
 
+//Sets the selected treatment time to 20 minutes
 void MainWindow::select20MinSession(){
     selectedTime = time20;
     log("Selected 20 minute session");
 }
 
+//Sets the selected treatment time to 45 minutes
 void MainWindow::select45MinSession(){
     selectedTime = time45;
     log("Selected 45 minute session");
 }
 
+//Sets the selected treatment time to custom
 void MainWindow::selectCustomSession(){
     selectedTime = timeCustom;
     log("Selected custom time session");
 }
 
+//Sets the treatment session type to Alpha
 void MainWindow::selectAlphaSession(){
     device->setSessionType(new AlphaSession);
     log("Selected Alpha session");
 }
 
+//Sets the treatment session type to Beta
 void MainWindow::selectBetaSession(){
     device->setSessionType(new BetaSession);
     log("Selected Beta session");
 }
 
+//Sets the treatment session type to Delta
 void MainWindow::selectDeltaSession(){
     device->setSessionType(new DeltaSession);
     log("Selected Delta session");
 }
 
+//Sets the treatment session type to Theta
 void MainWindow::selectThetaSession(){
     device->setSessionType(new ThetaSession);
     log("Selected Theta session");
 }
 
+//Sets the treatment session time to the selected treatment time
 void MainWindow::setSessionTime() {
     int time = 0;
     switch(selectedTime) {
