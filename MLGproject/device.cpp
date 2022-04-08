@@ -41,7 +41,7 @@ Device::~Device() {
 // Updates the treatment every second while turnedOn and treatmentInProgress
 void Device::updateTreatment()
 {
-    if(turnedOn && treatmentInProgress){
+    if(turnedOn && treatmentInProgress && isTouchingSkin){
         isIdle = false;
         if (--treatmentTimeRemaining <= 0){
             treatmentTimeRemaining = 0;
