@@ -39,5 +39,12 @@
         <file>pngs/upButton.png</file>
         <file>pngs/hButton.png</file>
         <file>pngs/onLightGreen.png</file>
+        <file>pngs/topMiddleAGreen.png</file>
+        <file>pngs/topMiddleAlphaGreen.png</file>
+        <file>pngs/topMiddleBeta1Green.png</file>
+        <file>pngs/topMiddleMoreGreen.png</file>
+        <file>pngs/topMiddleOmegaGreen.png</file>
+        <file>pngs/topMiddlePlusGreen.png</file>
+        <file>pngs/topMiddleLessGreen.png</file>
     </qresource>
 </RCC>
