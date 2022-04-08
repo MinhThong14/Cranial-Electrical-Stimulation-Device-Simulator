@@ -53,8 +53,53 @@ void MainWindow::update(){
     if(device->isPowerOn()){
         ui->onLight->setStyleSheet("#onLight{border-image: url(:/pngs/onLightGreen.png);}");
 
+        if(selectedTime == time20){
+            ui->time20Button->setStyleSheet("#time20Button{border-image: url(:/pngs/topMiddleLessGreen.png);}");
+            ui->time45Button->setStyleSheet("#time45Button{border-image: url(:/pngs/topMiddleMore.png);}");
+            ui->customTimeButton->setStyleSheet("#customTimeButton{border-image: url(:/pngs/topMiddlePlus.png);}");
+
+
+        }else if(selectedTime == time45){
+            ui->time20Button->setStyleSheet("#time20Button{border-image: url(:/pngs/topMiddleLess.png);}");
+            ui->time45Button->setStyleSheet("#time45Button{border-image: url(:/pngs/topMiddleMoreGreen.png);}");
+            ui->customTimeButton->setStyleSheet("#customTimeButton{border-image: url(:/pngs/topMiddlePlus.png);}");
+        }else if(selectedTime == timeCustom){
+            ui->time20Button->setStyleSheet("#time20Button{border-image: url(:/pngs/topMiddleLess.png);}");
+            ui->time45Button->setStyleSheet("#time45Button{border-image: url(:/pngs/topMiddleMore.png);}");
+            ui->customTimeButton->setStyleSheet("#customTimeButton{border-image: url(:/pngs/topMiddlePlusGreen.png);}");
+        }
+
+        if(device->getSessionType()->getName() == "Alpha"){
+            ui->alphaButton->setStyleSheet("#alphaButton{border-image: url(:/pngs/topMiddleAlphaGreen.png);}");
+            ui->betaButton->setStyleSheet("#betaButton{border-image: url(:/pngs/topMiddleBeta1.png);}");
+            ui->deltaButton->setStyleSheet("#deltaButton{border-image: url(:/pngs/topMiddleA.png);}");
+            ui->thetaButton->setStyleSheet("#thetaButton{border-image: url(:/pngs/topMiddleOmega.png);}");
+        }else if (device->getSessionType()->getName() == "Beta 1"){
+            ui->alphaButton->setStyleSheet("#alphaButton{border-image: url(:/pngs/topMiddleAlpha.png);}");
+            ui->betaButton->setStyleSheet("#betaButton{border-image: url(:/pngs/topMiddleBeta1Green.png);}");
+            ui->deltaButton->setStyleSheet("#deltaButton{border-image: url(:/pngs/topMiddleA.png);}");
+            ui->thetaButton->setStyleSheet("#thetaButton{border-image: url(:/pngs/topMiddleOmega.png);}");
+        }else if (device->getSessionType()->getName() == "Delta"){
+            ui->alphaButton->setStyleSheet("#alphaButton{border-image: url(:/pngs/topMiddleAlpha.png);}");
+            ui->betaButton->setStyleSheet("#betaButton{border-image: url(:/pngs/topMiddleBeta1.png);}");
+            ui->deltaButton->setStyleSheet("#deltaButton{border-image: url(:/pngs/topMiddleAGreen.png);}");
+            ui->thetaButton->setStyleSheet("#thetaButton{border-image: url(:/pngs/topMiddleOmega.png);}");
+        }else if (device->getSessionType()->getName() == "Theta"){
+            ui->alphaButton->setStyleSheet("#alphaButton{border-image: url(:/pngs/topMiddleAlpha.png);}");
+            ui->betaButton->setStyleSheet("#betaButton{border-image: url(:/pngs/topMiddleBeta1.png);}");
+            ui->deltaButton->setStyleSheet("#deltaButton{border-image: url(:/pngs/topMiddleA.png);}");
+            ui->thetaButton->setStyleSheet("#thetaButton{border-image: url(:/pngs/topMiddleOmegaGreen.png);}");
+        }
+
     }else{
         ui->onLight->setStyleSheet("#onLight{border-image: url(:/pngs/onLight.png);}");
+        ui->time20Button->setStyleSheet("#time20Button{border-image: url(:/pngs/topMiddleLess.png);}");
+        ui->time45Button->setStyleSheet("#time45Button{border-image: url(:/pngs/topMiddleMore.png);}");
+        ui->customTimeButton->setStyleSheet("#customTimeButton{border-image: url(:/pngs/topMiddlePlus.png);}");
+        ui->alphaButton->setStyleSheet("#alphaButton{border-image: url(:/pngs/topMiddleAlpha.png);}");
+        ui->betaButton->setStyleSheet("#betaButton{border-image: url(:/pngs/topMiddleBeta1.png);}");
+        ui->deltaButton->setStyleSheet("#deltaButton{border-image: url(:/pngs/topMiddleA.png);}");
+        ui->thetaButton->setStyleSheet("#thetaButton{border-image: url(:/pngs/topMiddleOmega.png);}");
         ui->treatmentList->clear();
         ui->customTimeBox->clear();
     }
