@@ -30,9 +30,7 @@ public:
     void drainBattery(int amount);
     void setBatteryCharge(int value);
     void fullCharge();
-    void powerSurge();
 
-    void replayRecording(int index);
     void setTreatmentTime(int time);
     void setSessionType(Session* sessionType);
     void setIntensity(int i);
@@ -53,7 +51,7 @@ public:
     QList<TreatmentData*>* getRecordedTreatments();
 
     void startTreatment();
-    void replayRecordedTreatment(int index);
+    void replayRecording(int index);
     void recordTreatment();
 
 private:
@@ -71,7 +69,6 @@ private:
     int treatmentTimeRemaining;
     int drainBatteryBy;
 
-    void alert(QString);
     void displayLowBattery();
     void powerUp();
     void powerDown();

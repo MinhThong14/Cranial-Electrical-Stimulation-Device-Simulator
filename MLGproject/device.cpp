@@ -38,6 +38,7 @@ Device::~Device() {
     }
 }
 
+// Updates the treatment every second while turnedOn and treatmentInProgress
 void Device::updateTreatment()
 {
     if(turnedOn && treatmentInProgress){
@@ -54,6 +55,7 @@ void Device::updateTreatment()
     }
 }
 
+// Updates the battery every 3 seconds while turnedOn
 void Device::updateBattery(){
     if(turnedOn){
         if (battery->getPower() <= 0){
@@ -69,6 +71,7 @@ void Device::updateBattery(){
     }
 }
 
+// Updates the battery every 30 seconds while turnedOn, if device is idle then powerDown device
 void Device::updateTimeout(){
     if(turnedOn && isIdle && !treatmentInProgress){
         powerDown();
@@ -77,14 +80,17 @@ void Device::updateTimeout(){
     isIdle = true;
 }
 
+// Sets the battery batteryTimer interval
 void Device::setBatteryInterval(int interval){
     batteryTimer->setInterval(interval);
 }
 
+// Sets the amount the battery drains each batteryTimer interval
 void Device::setBatteryAmount(int amount){
     drainBatteryBy = amount;
 }
 
+// If device is turnedOn, powerDown else powerUp
 void Device::powerButtonPressed(){
     if (turnedOn){
         powerDown();
@@ -94,12 +100,14 @@ void Device::powerButtonPressed(){
     }
 }
 
+// Turn on device and start update loop timers
 void Device::powerUp(){
     turnedOn = true;
     batteryTimer->start();
     timeoutTimer->start();
 }
 
+// Turn off device and stop update loop timers
 void Device::powerDown(){
     turnedOn = false;
     treatmentInProgress = false;
@@ -111,26 +119,27 @@ void Device::powerDown(){
     treatmentTimeRemaining = 0;
 }
 
+// Increase battery power by amount
 void Device::chargeBattery(int amount){
     battery->charge(amount);
 }
 
+// Decrease battery power by amount
 void Device::drainBattery(int amount){
     battery->drain(amount);
 }
 
+// Set battery power by amount
 void Device::setBatteryCharge(int value){
     battery->setPower(value);
 }
 
+// Fully charge battery
 void Device::fullCharge(){
     battery->fullCharge();
 }
 
-void Device::powerSurge(){
-    powerDown();
-}
-
+// Sets length of curTreatment
 void Device::setTreatmentTime(int time){
     if(!treatmentInProgress){
         curTreatment->setLength(time);
@@ -138,6 +147,7 @@ void Device::setTreatmentTime(int time){
     }
 }
 
+// Sets Session of curTreatment
 void Device::setSessionType(Session* sessionType){
     if(!treatmentInProgress){
         curTreatment->setSessionType(sessionType);
@@ -145,6 +155,7 @@ void Device::setSessionType(Session* sessionType){
     }
 }
 
+// Sets intensity of curTreatment
 void Device::setIntensity(int i){
     if(i > 0 && i < 9){
         curTreatment->setIntensity(i);
@@ -160,6 +171,7 @@ void Device::setTouchingSkin(bool b){
     isTouchingSkin = b;
 }
 
+// Increments intensity of curTreatment by 1
 void Device::increaseIntensity(){
     if(turnedOn){
         int intensity = curTreatment->getIntensity();
@@ -169,6 +181,7 @@ void Device::increaseIntensity(){
     }
 }
 
+// Decrements intensity of curTreatment by 1
 void Device::decreaseIntensity(){
     if(turnedOn){
         int intensity = curTreatment->getIntensity();
@@ -178,18 +191,22 @@ void Device::decreaseIntensity(){
     }
 }
 
+// Gets power of battery
 int Device::getBatteryPower(){
     return battery->getPower();
 }
 
+// Gets length of curTreatment
 int Device::getTreatmentTime(){
     return curTreatment->getLength();
 }
 
+// Gets SessionType of curTreatment
 int Device::getIntensity(){
     return curTreatment->getIntensity();
 }
 
+// Gets SessionType of curTreatment
 Session* Device::getSessionType(){
     return curTreatment->getSessionType();
 }
@@ -210,6 +227,7 @@ QList<TreatmentData*>* Device::getRecordedTreatments(){
     return &recordedTreatments;
 }
 
+// Begin running a treatment
 void Device::startTreatment(){
     if(turnedOn && !treatmentInProgress){
         if(isTouchingSkin){
@@ -225,6 +243,7 @@ void Device::startTreatment(){
     }
 }
 
+// Set curTreatment to a copy of a recorded treatment
 void Device::replayRecording(int index){
     if(index >= 0 && index < recordedTreatments.length()){
         delete curTreatment;
@@ -234,11 +253,13 @@ void Device::replayRecording(int index){
     }
 }
 
+// Adds a copy of treatment to recordedTreatments
 void Device::recordTreatment(){
     TreatmentData* newTreatment = copyTreatment(curTreatment);
     recordedTreatments.append(newTreatment);
 }
 
+// Return a copy of given treatment
 TreatmentData* Device::copyTreatment(TreatmentData* treatment){
     string sessionName = treatment->getSessionType()->getName();
     Session* session;
