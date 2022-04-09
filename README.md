@@ -79,4 +79,8 @@ How to use the device:
 	and Intensity settings outside the Treatment History window. To reiterate, use the Start button to start
 	normal treatments, and use the History button to start recorded treatments from the Treatment History window.
 	
+Note:
+	If you are having trouble getting the code to build, try closing QT, deleting 'MLGproject.pro.user', opening
+	QT and trying to run the project again.
+	
 	
