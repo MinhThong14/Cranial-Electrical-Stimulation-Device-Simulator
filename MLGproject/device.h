@@ -66,6 +66,7 @@ private:
     bool isIdle;
     bool isRecording;
     bool isTouchingSkin;
+    bool treatmentPaused;
     int treatmentTimeRemaining;
     int drainBatteryBy;
 

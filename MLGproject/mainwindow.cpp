@@ -57,8 +57,6 @@ void MainWindow::update(){
             ui->time20Button->setStyleSheet("#time20Button{border-image: url(:/pngs/topMiddleLessGreen.png);}");
             ui->time45Button->setStyleSheet("#time45Button{border-image: url(:/pngs/topMiddleMore.png);}");
             ui->customTimeButton->setStyleSheet("#customTimeButton{border-image: url(:/pngs/topMiddlePlus.png);}");
-
-
         }else if(selectedTime == time45){
             ui->time20Button->setStyleSheet("#time20Button{border-image: url(:/pngs/topMiddleLess.png);}");
             ui->time45Button->setStyleSheet("#time45Button{border-image: url(:/pngs/topMiddleMoreGreen.png);}");
@@ -184,43 +182,36 @@ void MainWindow::toggleAttachment(const QString& value){
 //Sets the selected treatment time to 20 minutes
 void MainWindow::select20MinSession(){
     selectedTime = time20;
-    log("Selected 20 minute session");
 }
 
 //Sets the selected treatment time to 45 minutes
 void MainWindow::select45MinSession(){
     selectedTime = time45;
-    log("Selected 45 minute session");
 }
 
 //Sets the selected treatment time to custom
 void MainWindow::selectCustomSession(){
     selectedTime = timeCustom;
-    log("Selected custom time session");
 }
 
 //Sets the treatment session type to Alpha
 void MainWindow::selectAlphaSession(){
     device->setSessionType(new AlphaSession);
-    log("Selected Alpha session");
 }
 
 //Sets the treatment session type to Beta
 void MainWindow::selectBetaSession(){
     device->setSessionType(new BetaSession);
-    log("Selected Beta session");
 }
 
 //Sets the treatment session type to Delta
 void MainWindow::selectDeltaSession(){
     device->setSessionType(new DeltaSession);
-    log("Selected Delta session");
 }
 
 //Sets the treatment session type to Theta
 void MainWindow::selectThetaSession(){
     device->setSessionType(new ThetaSession);
-    log("Selected Theta session");
 }
 
 //Sets the treatment session time to the selected treatment time

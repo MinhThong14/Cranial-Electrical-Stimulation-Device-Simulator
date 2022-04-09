@@ -10,6 +10,7 @@ Device::Device(QObject *parent) : QObject(parent)
     isIdle = false;
     isRecording = false;
     isTouchingSkin = true;
+    treatmentPaused = false;
 
     treatmentTimeRemaining = 0;
     drainBatteryBy = 1;
@@ -43,6 +44,7 @@ void Device::updateTreatment()
 {
     if(turnedOn && treatmentInProgress && isTouchingSkin){
         isIdle = false;
+        treatmentPaused = false;
         if (--treatmentTimeRemaining <= 0){
             treatmentTimeRemaining = 0;
             treatmentInProgress = false;
@@ -52,6 +54,10 @@ void Device::updateTreatment()
             popupAlert("Treatment is over, turning off the device.");
             powerDown();
         }
+    }
+    else if (turnedOn && treatmentInProgress && !isTouchingSkin && !treatmentPaused){
+        treatmentPaused = true;
+        popupAlert("Device not in contact with skin, treatment paused.");
     }
 }
 
