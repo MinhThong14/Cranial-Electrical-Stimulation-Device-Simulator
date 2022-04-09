@@ -636,6 +636,25 @@ downButton:pressed{
       <string notr="true">color: rgb(255, 255, 255);</string>
      </property>
     </widget>
+    <widget class="QLabel" name="customTimeLabel_2">
+     <property name="geometry">
+      <rect>
+       <x>32</x>
+       <y>150</y>
+       <width>111</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Treatment History</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
    </widget>
    <widget class="QFrame" name="Background_2">
     <property name="geometry">
