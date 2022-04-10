@@ -133,8 +133,10 @@ void MainWindow::startButton() {
 //Reacts to the history button being pressed, attempting to start a selected recorded treatment
 void MainWindow::historyButton() {
     int index = (ui->treatmentList->currentIndex()).row();
-    selectedTime = timeCustom;
-    device->replayRecording(index);
+    if(index != -1){
+        selectedTime = timeCustom;
+        device->replayRecording(index);
+    }
 }
 
 //Drains the device battery by 3%
